@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueRouter from "vue-router"
-import {routes} from './router/routes'
+import router from "@/router/routes";
 import {store} from "./store/store";
+import axios from "axios";
+import {Vuelidate} from "vuelidate";
+import VueSweetalert2 from 'vue-sweetalert2';
 
 Vue.config.productionTip = false
-Vue.use(VueRouter)
 
-const router = new VueRouter({
-    mode: 'history',
-    routes,
-})
+Vue.use(Vuelidate)
+Vue.use(VueSweetalert2);
+Vue.prototype.axios = axios
 
 new Vue({
     render: h => h(App),
